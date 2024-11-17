@@ -1,7 +1,44 @@
-<h1>Mensajes</h1>
+@if(mostrarChat){
+<div class="chat-container">
 
-{{ contenidoMensaje }}
-<br>
-<br>
+  <div class="chat-header">
+    <img src="https://via.placeholder.com/40" alt="Foto de usuario" class="user-photo">
+    <div class="user-info">
+      <span class="user-name">{{nombreUser}}</span>
+      <span class="user-status">En línea</span>
+    </div>
+  </div>
 
-<button (click)="mensajeNuevo()">Enviar Mensaje</button>
+  <div class="messages" id="messages">
+    @for (contenidoMensaje of mensajes; track contenidoMensaje.id) {
+    @if(contenidoMensaje.id !== idUser){
+    <div class="message received">
+      {{ contenidoMensaje.mensaje }}
+    </div>
+    }@else {
+    <div class="message sent">
+      {{ contenidoMensaje.mensaje }}
+    </div>
+    }
+    }
+  </div>
+
+  <div class="input-area">
+    <form [formGroup]="myFormMessage">
+      <input type="text" id="messageInput" formControlName="mensaje" placeholder="Escribe un mensaje..."
+        aria-label="Campo para escribir un mensaje">
+      <button id="sendButton" (click)="mensajeNuevo()" aria-label="Enviar mensaje">Enviar</button>
+    </form>
+  </div>
+</div>
+
+}@else {
+
+<form [formGroup]="myForm" autocomplete="off">
+  <label for="">Usuario</label><br>
+  <input type="email" name="" id="" formControlName="usuario"><br><br>
+  <label for="">Contraseña</label><br>
+  <input type="password" formControlName="password"><br>
+</form>
+<button (click)="verificarCredenciales()">Iniciar Sesion</button>
+}

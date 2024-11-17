@@ -7,7 +7,7 @@ import { Observable } from "rxjs";
 })
 export class ChatService {
 
-  private url = 'http://localhost:3000';
+  private url = 'http://localhost:3001';
 
   private http = inject(HttpClient);
 

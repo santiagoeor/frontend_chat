@@ -9,7 +9,7 @@ import { io, Socket } from "socket.io-client";
 export class SocketService {
 
   private socket: Socket;
-  private url = 'http://localhost:3000';
+  private url = 'http://localhost:3001';
 
   constructor() {
     this.socket = io(this.url);

@@ -1,0 +1,98 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f0f0f0;
+}
+
+.chat-container {
+  width: 100%;
+  height: 90vh;
+  border: 2px solid purple; /* Franja morada */
+  display: flex;
+  flex-direction: column;
+}
+
+.chat-header {
+  display: flex;
+  align-items: center;
+  background-color: #2ae809; /* Color del encabezado */
+  padding: 10px;
+  color: white;
+}
+
+.user-photo {
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-name {
+  font-weight: bold;
+}
+
+.user-status {
+  font-size: 0.9em;
+  opacity: 0.8;
+}
+
+.messages {
+  flex: 1;
+  padding: 10px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.message {
+  margin: 5px 0;
+  padding: 10px;
+  border-radius: 5px;
+  max-width: 70%; /* Limitar el ancho de los mensajes */
+}
+
+.message.sent {
+  background-color: #e1ffc7;
+  align-self: flex-end; /* Mensaje enviado a la derecha */
+}
+
+.message.received {
+  background-color: #d1d1d1;
+  align-self: flex-start; /* Mensaje recibido a la izquierda */
+}
+
+.input-area {
+  display: flex;
+  padding: 10px;
+  border-top: 1px solid #ccc;
+  background-color: #2ae809; /* Color azul morado */
+}
+
+#messageInput {
+  flex: 1;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+#sendButton {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #4CAF50;
+  color: white;
+  cursor: pointer;
+}
+
+#sendButton:hover {
+  background-color: #45a049;
+}
